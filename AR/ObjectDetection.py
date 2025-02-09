@@ -142,6 +142,7 @@ def get_status():
         "camera_initialized": camera is not None
     })
 
+
 @app.route('/')
 def index():
     return "Enhanced Object Detection API with Hindi Translation is running!"
