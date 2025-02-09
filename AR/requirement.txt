@@ -1,0 +1,10 @@
+Flask
+flask-cors
+opencv-python
+transformers
+torch
+Pillow
+gTTS
+playsound
+threading
+googletrans==4.0.0-rc1
