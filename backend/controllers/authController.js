@@ -174,12 +174,12 @@ exports.signup = async (req, res) => {
 
         // Create JWT and send as cookie
         const token = createToken(newUser._id);
-        res.cookie('jwt', token, { 
-            httpOnly: true, 
-            secure: process.env.NODE_ENV === 'production', 
-            maxAge: maxAge * 1000, // Convert to milliseconds
-            sameSite: 'lax'
-        });
+       res.cookie('jwt', token, { 
+    httpOnly: true, 
+    secure: true, // Must be true for HTTPS
+    maxAge: maxAge * 1000,
+    sameSite: 'none' // Allows cross-origin cookies
+});
 
         res.status(201).json({ message: "User created successfully.", user: { username: newUser.username } });
     } catch (error) {
