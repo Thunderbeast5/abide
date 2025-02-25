@@ -75,6 +75,7 @@ router.post("/login", authController.login);
 
 // ✅ Protected Route - Returns Current User
 router.get("/me", requireAuth, (req, res) => {
+  console.log("Current User:", req.user);
   res.status(200).json({ user: req.user });
 });
 
